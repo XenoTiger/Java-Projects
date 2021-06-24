@@ -1,0 +1,4 @@
+url=jdbc:oracle:thin:@10.219.34.3:1521:orcl
+driver=oracle.jdbc.driver.OracleDriver
+username=trg526
+password=training526
