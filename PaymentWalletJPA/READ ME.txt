@@ -1,0 +1,10 @@
+
+create table bank_details(
+accountNo number(10) primary key,balance number(20));
+
+create table customer_details(
+custId number(10) primary key,
+name varchar(20),phoneNo number(15),
+emailId varchar(20),
+accType varchar(20),
+accountNo number(10) references bank_details(accountNo));
