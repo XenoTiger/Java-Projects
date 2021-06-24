@@ -1,0 +1,25 @@
+
+<div class="container col-md-4">
+  <form #customerForm="ngForm" (ngSubmit)="customerForm.valid && createCustomer(customerForm.value)" align="center">
+      <div class="form-group">
+          Name:
+          <br/>
+          <input type="text" name="customerName" [(ngModel)]="nameModel" #customerName="ngModel"
+    [ngClass]="{ 'is-invalid': customerForm.submitted && customerName.invalid }" required><br>
+    <div *ngIf="customerForm.submitted && customerName.invalid">
+    <div *ngIf="customerName.errors.required" style="color: red">Required</div>
+    </div>
+    </div>
+    <div class="form-group">
+        Mobile No:
+        <br/>
+         <input type="text" name="customerMobileNo" [(ngModel)]="mobileModel" #customerMobileNo="ngModel"
+    [ngClass]="{ 'is-invalid': customerForm.submitted && customerMobileNo.invalid }" required><br>
+    <div *ngIf="customerForm.submitted && customerMobileNo.invalid">
+    <div *ngIf="customerMobileNo.errors.required" style="color: red">Required</div>
+    </div>
+  </div>
+  <br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

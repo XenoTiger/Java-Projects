@@ -1,0 +1,21 @@
+  <div  class="container">
+        <h1 align="center">Welcome to MY Bank</h1>
+  </div>
+<br/>
+  <div class="center">
+      <img src="\assets\bank.jpg" class="center">
+  </div>
+
+  <br>
+  <br>
+
+  <div class="center">
+    <h4 align="center"><a [routerLink] = "['createCustomer']">Create Account</a><br>
+    <a [routerLink] = "['showBalance']" >Show Balance</a><br>
+    <a [routerLink] = "['deposit']" >Deposit</a><br>
+    <a [routerLink] = "['withdraw']">Withdraw</a><br>
+    <a [routerLink] = "['fundTransfer']" >Fund Transfer</a><br>
+  <a [routerLink] = "['printTransaction']">Print Transaction</a></h4>
+  </div>
+
+<router-outlet></router-outlet>

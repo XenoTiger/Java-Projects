@@ -1,0 +1,25 @@
+
+<div class="container col-md-4">
+  <form #depositForm="ngForm" (ngSubmit)="depositForm.valid && deposit(depositForm.value)" align="center">
+      <div class="container">
+    Account No:
+    <br/>
+    <input type="text" name="accountNo" [(ngModel)]="accountNoModel" #accountNo="ngModel"
+    [ngClass]="{ 'is-invalid': depositForm.submitted && accountNo.invalid }" required><br>
+    <div *ngIf="depositForm.submitted && accountNo.invalid">
+    <div *ngIf="accountNo.errors.required" style="color: red">Required</div>
+    </div>
+    Amount:
+    <br/>
+    <input type="text" name="balance" [(ngModel)]="balanceModel" #balance="ngModel"
+    [ngClass]="{ 'is-invalid': depositForm.submitted && balance.invalid }" required><br>
+    <div *ngIf="depositForm.submitted && balance.invalid">
+    <div *ngIf="balance.errors.required" style="color: red">Required</div>
+   </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </form>
+</div>
+
+<h4 align="center">Available Balance is : {{updatedBalance}}</h4>

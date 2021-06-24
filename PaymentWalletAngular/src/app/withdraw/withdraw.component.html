@@ -1,0 +1,25 @@
+
+<div class="container col-md-4">
+  <form #withdrawForm="ngForm" (ngSubmit)="withdrawForm.valid && withdraw(withdrawForm.value)" align="center">
+      <div class="container">
+    Account No
+    <br/>
+    <input type="text" name="accountNo" [(ngModel)]="accountNoModel" #accountNo="ngModel"
+    [ngClass]="{ 'is-invalid': withdrawForm.submitted && accountNo.invalid }" required><br>
+    <div *ngIf="withdrawForm.submitted && accountNo.invalid">
+    <div *ngIf="accountNo.errors.required" style="color: red">Required</div>
+    </div>
+    Withdraw Amount
+    <br/>
+    <input type="text" name="balance" [(ngModel)]="balanceModel" #balance="ngModel"
+    [ngClass]="{ 'is-invalid': withdrawForm.submitted && balance.invalid }" required><br>
+    <div *ngIf="withdrawForm.submitted && balance.invalid">
+    <div *ngIf="balance.errors.required" style="color: red">Required</div>
+   </div>
+    <br/>
+    <button type="submit"  class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+
+<h4 align="center">Available Balance is: {{updatedBalance}}</h4>

@@ -1,0 +1,30 @@
+
+<div class="container col-md-4">
+  <form #fundTransferForm="ngForm" (ngSubmit)="fundTransferForm.valid && fundTransfer(fundTransferForm.value)" align="center">
+      <div class="container">
+    Sender's Account No:
+    <br/>
+    <input type="text" name="accountNo1" [(ngModel)]="accountNo1Model" #accountNo1="ngModel"
+    [ngClass]="{ 'is-invalid': fundTransferForm.submitted && accountNo1.invalid }" required><br>
+    <div *ngIf="fundTransferForm.submitted && accountNo1.invalid">
+    <div *ngIf="accountNo1.errors.required" style="color: red">Required</div>
+    </div>
+    Receiver's Account No:
+    <br/>
+    <input type="text" name="accountNo2" [(ngModel)]="accountNo2Model" #accountNo2="ngModel"
+    [ngClass]="{ 'is-invalid': fundTransferForm.submitted && accountNo2.invalid }" required><br>
+    <div *ngIf="fundTransferForm.submitted && accountNo2.invalid">
+    <div *ngIf="accountNo2.errors.required" style="color: red">Required</div>
+   </div>
+    Amount :
+    <br/>
+    <input type="text" name="balance" [(ngModel)]="balanceModel" #balance="ngModel"
+    [ngClass]="{ 'is-invalid': fundTransferForm.submitted && balance.invalid }" required><br>
+    <div *ngIf="fundTransferForm.submitted && balance.invalid">
+    <div *ngIf="balance.errors.required" style="color: red">Required</div>
+   </div>
+    <br/>
+    <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
